@@ -162,6 +162,90 @@
   border-bottom: 1px solid var(--global-border-color);
 }
 
+.publication-cards {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  max-width: 980px;
+}
+
+.publication-card {
+  background: color-mix(in srgb, var(--global-bg-color) 94%, var(--global-base-color) 6%);
+  border: 1px solid var(--global-border-color);
+  border-left: 6px solid var(--global-base-color);
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+}
+
+.publication-card__body {
+  padding: 1.15rem 1.15rem 1.05rem;
+
+  @include breakpoint($medium) {
+    padding: 1.35rem 1.45rem 1.2rem;
+  }
+}
+
+.publication-card__title {
+  margin: 0 0 0.45rem;
+  font-family: $sans-serif-narrow;
+  font-size: 1.32rem;
+  line-height: 1.28;
+
+  a {
+    color: var(--global-base-color);
+    text-decoration: none;
+  }
+}
+
+.publication-card__venue,
+.publication-card__authors,
+.publication-card__note,
+.publication-card__excerpt {
+  margin: 0 0 0.65rem;
+}
+
+.publication-card__venue {
+  color: var(--global-text-color-light);
+  font-size: 0.92rem;
+}
+
+.publication-card__authors {
+  font-size: 1rem;
+  line-height: 1.55;
+
+  strong {
+    font-weight: 800;
+  }
+}
+
+.publication-card__note {
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+}
+
+.publication-card__excerpt {
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.publication-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+}
+
+.publication-card__btn {
+  margin-bottom: 0;
+  border-radius: 12px;
+  padding: 0.5rem 0.78rem;
+  font-size: 0.82rem;
+
+  i {
+    margin-right: 0.4rem;
+  }
+}
+
 .feature__item {
   margin-bottom: 2em;
   font-size: 1.25rem;

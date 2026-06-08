@@ -1,0 +1,53 @@
+{% include base_path %}
+
+<article class="publication-card">
+  <div class="publication-card__body">
+    <h2 class="publication-card__title">
+      <a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+    </h2>
+
+    <p class="publication-card__venue">
+      {% if post.venue %}{{ post.venue }}{% endif %}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}
+    </p>
+
+    {% if post.authors %}
+      <p class="publication-card__authors">{{ post.authors }}</p>
+    {% endif %}
+
+    {% if post.contribution_note %}
+      <p class="publication-card__note">{{ post.contribution_note }}</p>
+    {% endif %}
+
+    {% if post.excerpt %}
+      <p class="publication-card__excerpt">{{ post.excerpt }}</p>
+    {% endif %}
+
+    <div class="publication-card__links">
+      <a class="btn publication-card__btn" href="{{ base_path }}{{ post.url }}">
+        <i class="fas fa-link" aria-hidden="true"></i>
+        <span>Publication</span>
+      </a>
+
+      {% if post.projecturl %}
+        <a class="btn btn--inverse publication-card__btn" href="{{ post.projecturl }}" target="_blank" rel="noopener">
+          <i class="fas fa-up-right-from-square" aria-hidden="true"></i>
+          <span>Project</span>
+        </a>
+      {% endif %}
+
+      {% if post.arxivurl %}
+        <a class="btn btn--inverse publication-card__btn" href="{{ post.arxivurl }}" target="_blank" rel="noopener">
+          <i class="ai ai-arxiv" aria-hidden="true"></i>
+          <span>arXiv</span>
+        </a>
+      {% endif %}
+
+      {% if post.codeurl %}
+        <a class="btn btn--inverse publication-card__btn" href="{{ post.codeurl }}" target="_blank" rel="noopener">
+          <i class="fab fa-github" aria-hidden="true"></i>
+          <span>Code</span>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</article>
